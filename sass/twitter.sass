@@ -1,0 +1,39 @@
+@import mixin
+
+@include hnpx(50)
+@include hnpx(30)
+@include wnpx(30)
+@include wnpx(50)
+@include wnpx(300)
+@include wnpx(400)
+@include wnpx(650)
+@include wnpx(550)
+@include hnpx(200)
+@include hnpx(100)
+@include hnpx(700)
+@include hnpx(600)
+
+//顏色方法一 (quicker)
+$twitterColor: #1f2f3f, #1ca5f7, #82919e, #11171d, #15202b, #fff
+@for $i from 1 through 6
+    @include bgc(bg-twitter#{$i}, nth($twitterColor, $i))
+    @include color(text-twitter#{$i}, nth($twitterColor, $i))
+
+// 顏色方法二 (easier)
+// $twitterColor1: #1b2937
+// $twitterColor2: #1ca5f7
+// $twitterColor3: #82919e
+// $twitterColor4: #11171d
+// $twitterColor5: #15202b
+
+body
+    background-color: nth($twitterColor, 4)
+
+html,body
+    height: 100%
+
+.twitter3
+    color: #82919e
+
+.fs10
+    font-size: 10px
